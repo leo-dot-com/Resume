@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=100%, initial-scale=1.0">
+    <title>Leo Matthias Sturm</title>
+</head>
+<body>
+    <div id="Me" class="hidden">
+        <div id="Block1">
+            <img id="Picture" src="Picture.jpeg" alt="">
+        </div>
+        <div id="Block2">
+        <div id="Name">
+            Leo Matthias Sturm
+        </div>
+        <div id="Intro">
+            Innovative thinker with a passion for transforming ideas into reality
+        </div>
+        <div id="MeRow">
+            <div id="MyRow">
+                <div id="icon" style="width: 30px;">
+                    <img src="https://www.iconpacks.net/icons/1/free-phone-icon-1-thumb.png" alt="">
+                </div>
+                <div id="stuff">
+                    +852 9845 2221
+                </div>
+            </div>
+            <div id="MyRow">
+                <div id="icon" style="width: 50px;">
+                    <img src="https://3factsinc.org/wp-content/uploads/2019/12/crop-0-0-1000-1080-0-email-icon-outline-email-icon-isolated-on-white-vector-21742596.png" alt="">
+                </div>
+                <div id="stuff">
+                    leo-matthias.sturm@connect.polyu.hk
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <div id="Education" class="hidden">
+        <div id="EducationTitle">
+            Education
+        </div>
+        <div id="EduRow">
+            <div id="Column">
+                <div id="EduTitle">
+                    Lycée de Berlaymont
+                </div>
+                <div id="EduSubTitle">
+                    High School Diploma (Certificat d'Enseignement Secondaire Supérieur) with Second Honours <br>
+                    2016 — 2022 <br><br>
+                </div>
+                <div id="EduDescription">
+                    I graduated from the Lycée de Berlaymont in Waterloo, Belgium with Second Honours. I had chosen intensive mathematics, economics, Spanish, and Dutch as my free electives.
+                </div>
+            </div>
+            <div id="Column">
+                <div id="EduTitle">
+                    The Hong Kong Polytechnic University
+                </div>
+                <div id="EduSubTitle">
+                    BSc (HONS) in Logistics Engineering with Secondary Major in Artificial Intelligence and Data Analytics and Minor in Finance <br>
+                    2022 — 2026 <br><br>
+                </div>
+                <div id="EduDescription">
+                    I am a current Year 3 bachelor student at The Hong Kong Polytechnic University (PolyU). My bachelor is based on logistics engineering and supply chain management. During my second year I enrolled into a secondary major in AIDA and a minor in finance to deepen my knowledge in both AI and economics. 
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="WorkingExperience" class="hidden">
+        <div id="WorkTitle">
+            Work Experience
+        </div>
+        <div id="ExpRow">
+            <div id="ExpCell">
+                <div id="ExpTitle">
+                    Mini-Entreprise (09/2021 - 06/2022)
+                </div>
+                <div id="ExpDescription">
+                    I was the co-founder and elected CEO for mini business in local high school.
+                </div><br>
+                <button id="Button1" onclick="toggleDiv1()">Learn More!</button>
+                <div id="MoreInfo1">
+                    <div id="Text">
+                        In September 2021, 5 classmates and I joined a local workshop at our school. The purpose was to found, manage, and terminate a business. This would allow students to experience the entire lifecycle of a company.
+                        My friends and I decided to found a sock selling company. I was elected CEO and had to thus manage the team. Even though this opportunity was on a small scale, it still gave me insight into entrepreneurship which lectures couldn't have. 
+                    </div>
+                    <button onclick="showLess1()" style="width: 100%;">Show Less</button>
+                </div>
+            </div>
+            <div id="ExpCell">
+                <div id="ExpTitle">
+                    Gruber Logistics (06/2023 - 07/2023)
+                </div>
+                <div id="ExpDescription">
+                    I did a summer internship in a German-based logistics company.
+                </div><br>
+                <button id="Button2" onclick="toggleDiv2()">Learn More!</button>
+                <div id="MoreInfo2">
+                    <div id="Text">
+                        After having finished my first bachelor year in logistics engineering, I had the incredible opportunity of becoming a 6-week summer intern at Gruber Logistics in Bremen, Germany. It was an amazing journey which had its ups and downs. 
+                        The major difficulty during this internship was get acustomed to Bremen. I had never lived in Germany before, and coming back from Hong Kong, everything felt different. However, after 6 weeks I was sad to leave this beautiful city. I learned about logistics,
+                        forwarding, custom clearance, and so on; but I also gained adaptation and survival skills! 
+                    </div>
+                    <button onclick="showLess2()" style="width: 100%;">Show Less</button>
+                </div>
+            </div>
+            <div id="ExpCell">
+                <div id="ExpTitle">
+                    CPA Ambassador (05/2024 - 08/2025)
+                </div>
+                <div id="ExpDescription">
+                    I am an ambassador for the Communication and Public Affairs (CPA) office of PolyU.
+                </div><br>
+                <button id="Button6" onclick="toggleDiv6()">Learn More!</button>
+                <div id="MoreInfo6">
+                    <div id="Text">
+                        As an ambassador for the Communication and Public Affairs (CPA) office of PolyU, I actively represent the university's initiatives and values, engaging with both internal and external stakeholders. My role involves promoting effective communication strategies, enhancing community relations, 
+                        and participating in various events that showcase PolyU's commitment to innovation and excellence. Through this position, I strive to foster a positive image of the university while building meaningful connections that support our mission and vision.
+                    </div>
+                    <button onclick="showLess6()" style="width: 100%;">Show Less</button>
+                </div>
+            </div>
+        </div>
+        <div id="ExpRow">
+            <div id="ExpCell">
+                <div id="ExpTitle">
+                    STEM-Internship (06/2024 - 08/2024)
+                </div>
+                <div id="ExpDescription">
+                    I did a summer internship at the Industrial and Systems Engineering Department of Polyu.
+                </div><br>
+                <button id="Button3" onclick="toggleDiv3()">Learn More!</button>
+                <div id="MoreInfo3">
+                    <div id="Text">
+                        In June 2024, I joined a 2-month long STEM-Internship offered by my department. During the first two weeks, the interns were asked to learn about python, AI, machine learning, ... Afterwards, each intern got assigned to a project. I was
+                        assigned to 'Dyslexia Screening through Handwritten Image Detection'. This was a research paper I was allowed to join which focused on detecting children who have dyslexia based on their handwriting. I learned several other things in the AI-field such as 
+                        image generation, python coding, deep learning, AI models, ...
+                    </div>
+                    <button onclick="showLess3()" style="width: 100%;">Show Less</button>
+                </div>
+            </div>
+            <div id="ExpCell">
+                <div id="ExpTitle">
+                    Metaversity Part-Time (08/2024 - 12/2024)
+                </div>
+                <div id="ExpDescription">
+                    Supporting teaching and students learning in the metaverse environment
+                </div><br>
+                <button id="Button5" onclick="toggleDiv5()">Learn More!</button>
+                <div id="MoreInfo5">
+                    <div id="Text">
+                        After finishing the previously mentionned STEM-Internship, I was offered a Part-Time. During this part-time, my main duty is to help a PhD student (Mohammed Geda) writing research papers. Up until now, I've had the privilege of becoming co-author with him on several occasions. 
+                        Our research is very much AI based. From handwriting recongtion to group recommendation systems; Mr. Geda gives me incredible insight and experience in the industry. This part-time has been by far the most beneficial work experience I'v had. Over the course of a few months, 
+                        I've learnt so so much!
+                    </div>
+                    <button onclick="showLess5()" style="width: 100%;">Show Less</button>
+                </div>
+            </div>
+            <div id="ExpCell">
+                <div id="ExpTitle">
+                    On-Campus Jobs (No Specific Date)
+                </div>
+                <div id="ExpDescription">
+                    I've been a student assistant, student helper, ... for various events during my PolyU life.
+                </div><br>
+                <button id="Button4" onclick="toggleDiv4()">Learn More!</button>
+                <div id="MoreInfo4">
+                    <div id="Text">
+                        From helping the Turkish General Consul find his way through PolyU campus, to advertising engineering to high school students; I've done it all. I joined a significant amount of on-campus job, one more interesting than the other. 
+                        Each of them helped me enhance a different skill. The High-Table dinner from the Dean's Talk-Series helped me improve my small talk skills. Being a career fair assistant allowed me to improve my teamwork skills. Being reposnible for the Turkish General Consul helped me reduce my fear of talking to important people.
+                    </div>
+                    <button onclick="showLess4()" style="width: 100%;">Show Less</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="Achievements" class="hidden">
+        <div id="AchievementTitle">
+            Achievements
+        </div>
+        <div id="AchRow">
+            <div id="AchCell">
+                <div id="AchTitle">
+                    Scholarship
+                </div>
+                <div id="AchDescription">
+                    I was awarded a 2-year Entry Scholarship upon my acceptance at PolyU. This scholarship was in recognition of my outstanding High School grades and it covered my tuition fee and living expenses during my first 2 academic years.
+                </div>
+            </div>
+            <div id="AchCell">
+                <div id="AchTitle">
+                    Research Paper
+                </div>
+                <div id="AchDescription">
+                    I have been co-author on several research papers thanks to my part-time job at the Department of Industrial and Systems Engineering at PolyU. The mentioning of my name reflects the dedication, work, and effort I've put into each of these papers.
+                </div>
+            </div>
+            <div id="AchCell">
+                <div id="AchTitle">
+                    MingPao Article
+                </div>
+                <div id="AchDescription">
+                    I was asked to join a press interview at the end of my STEM-Internship, reflecting on how the past 2 months helped in my academical and professional development. The article can be found <a href="https://jump.mingpao.com/career-news/news/理大工業及系統工程學系本科課程大革新-培養創新/" target="_blank">here</a>.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="ExtraCurricular" class="hidden">
+        <div id="ExtraCurricularTitle">
+            Extra Curriculars
+        </div>
+        <div id="ExpRow">
+            <div id="ExpCell">
+                <div id="ExpTitle">
+                    Financial Secretary (08/2023 - 07/2024)
+                </div>
+                <div id="ExpDescription">
+                    I was the financial secretary of the International Student Association (ISA) of PolyU.
+                </div><br>
+                <button id="Button7" onclick="toggleDiv7()">Learn More!</button>
+                <div id="MoreInfo7">
+                    <div id="Text">
+                        I was chosen to become the financial secretary of the International Student Association during my second year of bachelor studies. I was interested in this position for two reasons: I wanted to apply and strengthen the financial knowledge I had gathered from my minor, and 
+                        I wanted to help international students, such as myself, to have a smoother arrival in Hong Kong and at PolyU. THroughout my term, I learnt key financial factors such as budgeting, planning, and accounting. I also gained some teamwork skills and public speech from our frequent events.
+                    </div>
+                    <button onclick="showLess7()" style="width: 100%;">Show Less</button>
+                </div>
+            </div>
+            <div id="ExpCell">
+                <div id="ExpTitle">
+                    SEN Ambassador (09/2022 - On going)
+                </div>
+                <div id="ExpDescription">
+                    Helping Special Educational Needs (SEN) students to get used to University life.
+                </div><br>
+                <button id="Button8" onclick="toggleDiv8()">Learn More!</button>
+                <div id="MoreInfo8">
+                    <div id="Text">
+                        I became an SEN ambassador only in September 2024. However, I have helped students and joined SEN activities ever since September 2022. This volunteering work is so heartwarming. As an ambassador, I am charged with several tasks to promote inclusivness on campus.
+                        We have a 'buddy program' where one SEN student and one Ambassador are paired up, and meet up regularly to enhance the SEN student's social life. There is also the 'English Language Program' where the Ambassadors help SEN students to enhance their oral english. Lastly, we
+                        organise several activities throughout the year to help promote inclusivness on campus such as gatherings, sports events, museum trips, ...
+                    </div>
+                    <button onclick="showLess8()" style="width: 100%;">Show Less</button>
+                </div>
+            </div>
+            <div id="ExpCell">
+                <div id="ExpTitle">
+                    IET Mentorship (09/2024-08/2025)
+                </div>
+                <div id="ExpDescription">
+                    I joined the Institution of Engineering and Technology (IET) Mentorship Program
+                </div><br>
+                <button id="Button9" onclick="toggleDiv9()">Learn More!</button>
+                <div id="MoreInfo9">
+                    <div id="Text">
+                        Joining the IET Mentorship program was such a great decision. I was able to connect with like-minded students while gaining more isnight into our industry through the expertise of PolyU almunis. I was paired up with my mentor, Mr. Penny Chan, who is working at Linde PLC. 
+                        I was fortunate to be invited by him to a tour of the Linde manufacturing plant, where I learnt many key parts from natural gas and oil refining through petrochemicals and fertilizers to electronics and metal processing.
+                    </div>
+                    <button onclick="showLess9()" style="width: 100%;">Show Less</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="Skills" class="hidden">
+        <div id="SkillsTitle">
+            Skills
+        </div>
+        <div id="SkiRow">
+            <div id="SkiColumn">
+                <div id="SkiTitle">
+                    Technical Skills
+                </div>
+                <div id="SkiDescription">
+                    <table>
+                        <tr>
+                            <td>Programming Languages</td>
+                            <td>Python, C++</td>
+                        </tr>
+                        <tr>
+                            <td>Web Development</td>
+                            <td>HTML, CSS</td>
+                        </tr>
+                        <tr>
+                            <td>Data Analysis</td>
+                            <td>Excel, Python libraries</td>
+                        </tr>
+                        <tr>
+                            <td>Machine Learning</td>
+                            <td>TensorFlow</td>
+                        </tr>
+                        <tr>
+                            <td>Database Management</td>
+                            <td>SQL</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div id="SkiColumn">
+                <div id="SkiTitle">
+                    Language Skills
+                </div>
+                <div id="SkiDescription">
+                    <table>
+                        <tr>
+                            <td>🇩🇪 German</td>
+                            <td>Native</td>
+                        </tr>
+                        <tr>
+                            <td>🇫🇷 French</td>
+                            <td>Native</td>
+                        </tr>
+                        <tr>
+                            <td>🇬🇧 English</td>
+                            <td>Native</td>
+                        </tr>
+                        <tr>
+                            <td>🇨🇳 Mandarin</td>
+                            <td>Intermediate</td>
+                        </tr>
+                        <tr>
+                            <td>🇳🇱 Dutch</td>
+                            <td>Intermediate</td>
+                        </tr>
+                        <tr>
+                            <td>🇭🇰 Cantonese</td>
+                            <td>Beginner</td>
+                        </tr>
+                    </table>
+                </div>
+                <span style="text-align: center; margin-top: 25px; font-size: 18px;">🌍 <span style="font-weight: bold;">Fun Fact: </span>I can chat with half the planet! 🎉</span>
+            </div>
+            <div id="SkiColumn">
+                <div id="SkiTitle">
+                    Human Skills
+                </div>
+                <div id="SkiDescription" style="text-align: center;">
+                    Teamwork <br>
+                    Leadership <br>
+                    Adaptability <br>
+                    Communication <br>
+                    Porblem-Solving <br>
+                    Time-Management <br>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="Referee" class="hidden">
+        <div id="RefereeTitle">
+            Referees
+        </div>
+        <div id="RefRow">
+            <div id="RefCol">
+                <div id="RefPic">
+                    <img src="https://i1.rgstatic.net/ii/profile.image/859077831819268-1581831524679_Q512/Ym-Tang-3.jpg" alt="">
+                </div>
+                <div id="RefName">
+                    Ir. Dr. Yuk Ming Tang
+                </div>
+                <div id="RefTitle">
+                    Senior Lecturer (PolyU)
+                </div><br>
+                <div id="RefContact">
+                    +852 3400 3940 <br>
+                    yukming.tang@polyu.edu.hk
+                </div>
+            </div>
+            <div id="RefCol">
+                <div id="RefPic">
+                    <img src="https://i1.rgstatic.net/ii/profile.image/1180585863184386-1658485012959_Q512/Mohammed-Woyeso-Geda-2.jpg" alt="">
+                </div>
+                <div id="RefName">
+                    Dr. Mohammed Geda
+                </div>
+                <div id="RefTitle">
+                    Postdoctoral Fellow (PolyU)
+                </div><br>
+                <div id="RefContact">
+                    +852 9845 2221 <br>
+                    something@else.com
+                </div>
+            </div>
+            <div id="RefCol">
+                <div id="RefPic">
+                    <img src="" alt="">
+                </div>
+                <div id="RefName">
+                    Ir. Penny Chan (Linde)
+                </div>
+                <div id="RefTitle">
+                    TBC
+                </div><br>
+                <div id="RefContact">
+                    +852 9845 2221 <br>
+                    something@else.com
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="TheEnd">
+        Last Updated: 15/10/2024
+    </div>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto+Slab:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <script>
+        function toggleDiv1() {
+            var div = document.getElementById("MoreInfo1");
+            var button = document.getElementById("Button1")
+            div.style.display = "block";
+            button.style.display = "none"; 
+        }
+        function showLess1() {
+            var div = document.getElementById("MoreInfo1");
+            var button = document.getElementById("Button1")
+            div.style.display = "none";
+            button.style.display = "block";
+        }
+        function toggleDiv2() {
+            var div = document.getElementById("MoreInfo2");
+            var button = document.getElementById("Button2")
+            div.style.display = "block";
+            button.style.display = "none"; 
+        }
+        function showLess2() {
+            var div = document.getElementById("MoreInfo2");
+            var button = document.getElementById("Button2")
+            div.style.display = "none";
+            button.style.display = "block";
+        }
+        function toggleDiv3() {
+            var div = document.getElementById("MoreInfo3");
+            var button = document.getElementById("Button3")
+            div.style.display = "block";
+            button.style.display = "none"; 
+        }
+        function showLess3() {
+            var div = document.getElementById("MoreInfo3");
+            var button = document.getElementById("Button3")
+            div.style.display = "none";
+            button.style.display = "block";
+        }
+        function toggleDiv4() {
+            var div = document.getElementById("MoreInfo4");
+            var button = document.getElementById("Button4")
+            div.style.display = "block";
+            button.style.display = "none"; 
+        }
+        function showLess4() {
+            var div = document.getElementById("MoreInfo4");
+            var button = document.getElementById("Button4")
+            div.style.display = "none";
+            button.style.display = "block";
+        }
+        function toggleDiv5() {
+            var div = document.getElementById("MoreInfo5");
+            var button = document.getElementById("Button5")
+            div.style.display = "block";
+            button.style.display = "none"; 
+        }
+        function showLess5() {
+            var div = document.getElementById("MoreInfo5");
+            var button = document.getElementById("Button5")
+            div.style.display = "none";
+            button.style.display = "block";
+        }
+        function toggleDiv6() {
+            var div = document.getElementById("MoreInfo6");
+            var button = document.getElementById("Button6")
+            div.style.display = "block";
+            button.style.display = "none"; 
+        }
+        function showLess6() {
+            var div = document.getElementById("MoreInfo6");
+            var button = document.getElementById("Button6")
+            div.style.display = "none";
+            button.style.display = "block";
+        }
+        function toggleDiv7() {
+            var div = document.getElementById("MoreInfo7");
+            var button = document.getElementById("Button7")
+            div.style.display = "block";
+            button.style.display = "none"; 
+        }
+        function showLess7() {
+            var div = document.getElementById("MoreInfo7");
+            var button = document.getElementById("Button7")
+            div.style.display = "none";
+            button.style.display = "block";
+        }
+        function toggleDiv8() {
+            var div = document.getElementById("MoreInfo8");
+            var button = document.getElementById("Button8")
+            div.style.display = "block";
+            button.style.display = "none"; 
+        }
+        function showLess8() {
+            var div = document.getElementById("MoreInfo8");
+            var button = document.getElementById("Button8")
+            div.style.display = "none";
+            button.style.display = "block";
+        }
+        function toggleDiv9() {
+            var div = document.getElementById("MoreInfo9");
+            var button = document.getElementById("Button9")
+            div.style.display = "block";
+            button.style.display = "none"; 
+        }
+        function showLess9() {
+            var div = document.getElementById("MoreInfo9");
+            var button = document.getElementById("Button9")
+            div.style.display = "none";
+            button.style.display = "block";
+        }
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                console.log(entry)
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                } else {
+                    entry.target.classList.remove('show');
+                }
+            });
+        });
+
+        const hiddenElements = document.querySelectorAll('.hidden');
+        hiddenElements.forEach((el) => observer.observe(el));
+    </script>
+
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: #2c2c2c;
+            background-color: #f6fff8;
+        }
+        #Me {
+            border-radius: 25px;
+            display: flex;
+            flex-direction: row;
+            padding: 10px;
+            margin: 5px;
+        }
+        #Block1, #Block2 { 
+            display: flex;
+            flex-direction: column;
+        }
+        #Block1 {
+            flex: 0.5
+        }
+        #Block2 {
+            flex: 3.5;
+        }
+        #Picture, #Name, #Intro, #Button {
+            display: flex;
+            justify-content: center;
+        }
+        #Picture {
+            width: 300px;
+            height: auto;
+            border-radius: 25px;
+        }
+        #Name {
+            font-family: 'Roboto Slab', serif;
+            font-weight: bolder;
+            font-size: 50px;
+            padding: 10px;
+            margin: 20px;
+            margin-top: 100px;
+        }
+        #Intro {
+            font-size: 20px;
+            padding: 10px;
+            margin: 10px;
+            margin-bottom: 20px;
+        }
+        #MeRow, #MyRow {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+        button {
+            font-size: 15px;
+            border: solid #2c2c2c 2px;
+            border-radius: 15px;
+            color: #2c2c2c;
+            padding: 5px;
+            background-color: transparent;
+        }
+        button:hover {
+            background-color: #a9d6e5;
+            transition: ease 0.5s;
+            letter-spacing: 1px;
+        }
+        #Education, #Achievements, #Skills {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border-radius: 25px;
+            padding: 30px;
+            margin: 5px;
+            margin-top: 15px;
+        }
+        #Me {
+            background-color: #cae9ff;
+        }
+        #Education {
+            background-color: #a9d6e5;
+        }
+        #WorkingExperience {
+            background-color: #89c2d9;
+        }
+        #Achievements {
+            background-color: #61a5c2;
+        }
+        #ExtraCurricular {
+            background-color: #5fa8d3;
+        }
+        #Skills {
+            background-color: #468faf;
+        }
+        #Referee {
+            background-color: #2c7da0;
+        }
+        #EducationTitle, #WorkTitle, #AchievementTitle,  
+        #ExtraCurricularTitle, #SkillsTitle, #RefereeTitle {
+            font-size: 35px;
+            padding: 10px;
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            font-weight: bolder;
+        }
+        #EduRow, #RefRow {
+            display: flex;
+            flex-direction: row;
+        }
+        #Column {
+            margin: 5px;
+        }
+        #Column, #SkiColumn {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            width: 100%;
+            text-align: justify;
+        }
+        #RefCol {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            text-align: center;
+        }
+        #RefName {
+            font-size: 25;
+            font-weight: bolder;
+        }
+        #RefTitle {
+            font-size: 20;
+        }
+        #EduTitle {
+            text-align: center;
+            font-size: 25px;
+            font-weight: bold;
+            padding: 15px;
+        }
+        #EduSubTitle {
+            text-align: center;
+            font-size: 20px;
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+        #EduDescription {
+            padding: 10px;
+            display: block;
+        }
+        img {
+            width: 100%;
+        }
+        #WorkingExperience, #ExtraCurricular, #Referee {
+            border-radius: 25px;
+            padding: 30px;
+            margin: 5px;
+            margin-top: 15px;
+        }
+        #ExpRow, #SkiRow {
+            display: flex;
+            flex-direction: row;
+        }
+        #ExpCell {
+            display: flex;
+            flex-direction: column;
+            text-align: justify;
+            border-radius: 25px;
+            padding: 20px;
+            width: 100%;
+            margin: 3px;
+        }
+        #ExpTitle, #AchTitle, #SkiTitle {
+            font-weight: bold;
+            text-align: center;
+            font-size: 20px;
+            padding: 5px;
+        }
+        #ExpDescription {
+            font-size: 17px;
+            padding: 5px;
+        }
+        #Text {
+            margin-bottom: 10px;
+        }
+        #MoreInfo1, #MoreInfo2, #MoreInfo3,
+        #MoreInfo6, #MoreInfo5, #MoreInfo4, 
+        #MoreInfo7, #MoreInfo8, #MoreInfo9 {
+            display: none;
+        }
+        #AchRow {
+            display: flex;
+            flex-direction: row;
+        }
+        #AchCell {
+            display: flex;
+            flex-direction: column;
+            margin: 3px;
+            width: 100%;
+        }
+        #AchTitle {
+            font-size: 20px;
+            text-align: center;
+        }
+        #AchDescription {
+            text-align: justify;
+            padding: 4px;
+            margin: 3px;
+        }
+        table {
+            width: 100%;
+        }
+        #RefPic {
+            margin: 20px;
+            width: 150px;
+            height: 150px;
+        }
+        #RefPic img {
+            border-radius: 100%;
+        }
+        #TheEnd {
+            text-align: center;
+            padding-top: 15px;
+            padding-bottom: 30px;
+        }
+        .hidden {
+            opacity: 0;
+            filter: blur(5px);
+            transform: translateX(-100%);
+            transition: all 1.3s;
+        }
+        .show {
+            opacity: 1;
+            filter: blur(0);
+            transform: translateX(0);
+        }
+        @media(prefers-reduced-motion) {
+            .hidden {
+                transition: none;
+            }
+        }
+    </style>
+</body>
+</html>
