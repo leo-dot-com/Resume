@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leo Sturm | ISA Experience</title>
+    <style>
+        :root {
+            --primary: #043588;
+            --secondary: #29a180;
+            --dark: #202124;
+            --light: #f8f9fa;
+            --gray: #5f6368;
+            --light-teal: #e0f7f6;
+            --light-red: #ffebee;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            color: var(--dark);
+            line-height: 1.6;
+            background-color: #fafafa;
+        }
+
+        #title-image {
+            padding: 0;
+            background-image: url(https://www.polyu.edu.hk/ise/-/media/Department/ISE/Content/Research/Facilities-and-Laboratories/Integrated-Product-Design-Laboratory/IPD2.jpg?rev=674aecacba1f496a8fdc6ba75b2f20de&hash=6BC43859D7FC26AFC5FEB6F97D308C5B);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            background-position-y: 80%;
+            height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: -6%;
+        }
+        
+        .container {
+            width: 85%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 0;
+        }
+        
+        header {
+            background: var(--dark);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.5rem 0;
+        }
+        
+        .logo {
+            font-weight: 700;
+            font-size: 1.5rem;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 2rem;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+        
+        .nav-links a:hover {
+            opacity: 0.8;
+        }
+        
+        section {
+            padding: 4rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 0;
+            color: var(--primary);
+            position: relative;
+            margin-top: -10%;
+            background: rgba(255, 255, 255, 0.85);
+            padding: 20px 40px;
+            padding-bottom: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            display: inline-block;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 3px;
+            background: var(--primary);
+            border-radius: 3px;
+        }
+        
+        .company-header {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+            margin-top: -13%;
+            margin-bottom: 3rem;
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border-left: 5px solid var(--primary);
+        }
+        
+        .company-info {
+            flex: 1;
+        }
+        
+        .company-logo {
+            width: 180px;
+            height: 180px;
+            border-radius: 10px;
+            object-fit: contain;
+            background: var(--light-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            border: 1px solid #ddd;
+        }
+
+        .company-logo img {
+            width: 170px;
+            height: 170px;
+        }
+        
+        .experience-card {
+            background: white;
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            border-top: 3px solid var(--primary);
+        }
+        
+        .experience-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .experience-card h3 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--light-teal);
+        }
+        
+        .responsibility-list {
+            margin-top: 1.5rem;
+        }
+        
+        .responsibility-item {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .responsibility-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .responsibility-icon {
+            color: var(--secondary);
+            font-weight: bold;
+            min-width: 24px;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        
+        .skill-tag {
+            background: var(--light-teal);
+            color: var(--primary);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            text-align: center;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .skill-tag:hover {
+            background: var(--primary);
+            color: white;
+            transform: scale(1.05);
+        }
+        
+        .accomplishment-card {
+            background: white;
+            border-left: 4px solid var(--secondary);
+            padding: 1.5rem;
+            border-radius: 0 8px 8px 0;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            margin-bottom: 1rem;
+        }
+        
+        .accomplishment-card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .accomplishment-card h4 {
+            color: var(--secondary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            margin-top: 2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .back-link:hover {
+            color: #1a928b;
+            transform: translateX(-5px);
+        }
+        
+        .back-link svg {
+            margin-right: 8px;
+        }
+        
+        footer {
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        
+        @media (max-width: 768px) {
+            .company-header {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .skills-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="container">
+                <div class="logo">Leo Matthias Sturm</div>
+                <ul class="nav-links">
+                    <li><a href="../index.html#intro">Intro</a></li>
+                    <li><a href="../index.html#education">Education</a></li>
+                    <li><a href="../index.html#experience">Experience</a></li>
+                    <li><a href="../index.html#achievements">Achievements</a></li>
+                    <li><a href="../index.html#skills">Skills</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="gruber-experience">
+            <div id="title-image">
+                <h2 class="section-title">STEM Internship</h2>
+            </div>
+            <div class="container">                
+                <div class="company-header">
+                    <div class="company-logo">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7j-it_WD_Mnr6UPl6vrbseHH4iPFqrjkKQw&s" alt="ISA Logo">
+                    </div>
+                    <div class="company-info">
+                        <h1>Research Intern</h1>
+                        <p>Dept. of Industrial and Systems Engineering | June 2024 - August 2024</p>
+                        <p>Kowloon, Hong Kong</p>
+                        <p>Full-time summer internship in the international logistics division</p>
+                    </div>
+                </div>
+                
+                <div class="experience-card">
+                    <h3>Role Overview</h3>
+                    <p>As a Logistics Assistant at Gruber Logistics, I supported the international operations team in coordinating transportation routes across Europe. This hands-on experience gave me valuable insights into real-world supply chain challenges and the operational aspects of a leading logistics provider.</p>
+                </div>
+                
+                <div class="experience-card">
+                    <h3>Key Responsibilities</h3>
+                    <div class="responsibility-list">
+                        <div class="responsibility-item">
+                            <div class="responsibility-icon">➔</div>
+                            <div>
+                                <h4>Route Optimization</h4>
+                                <p>Analyzed and optimized transportation routes for 15+ daily shipments across Europe, reducing average delivery times by 8% through improved planning</p>
+                            </div>
+                        </div>
+                        <div class="responsibility-item">
+                            <div class="responsibility-icon">➔</div>
+                            <div>
+                                <h4>Documentation Management</h4>
+                                <p>Prepared and verified international shipping documentation (CMR, T1, T2 forms) ensuring compliance with EU regulations and customs requirements</p>
+                            </div>
+                        </div>
+                        <div class="responsibility-item">
+                            <div class="responsibility-icon">➔</div>
+                            <div>
+                                <h4>Customer Communication</h4>
+                                <p>Served as liaison between drivers, customers, and warehouse staff in 3 languages (English, German, French) to coordinate deliveries and resolve issues</p>
+                            </div>
+                        </div>
+                        <div class="responsibility-item">
+                            <div class="responsibility-icon">➔</div>
+                            <div>
+                                <h4>Inventory Tracking</h4>
+                                <p>Assisted in implementing a barcode scanning system for warehouse inventory, improving tracking accuracy by 15%</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="experience-card">
+                    <h3>Notable Accomplishments</h3>
+                    <div class="accomplishment-card">
+                        <h4>Cross-Border Efficiency Improvement</h4>
+                        <p>Identified bottlenecks in Austria-Italy border crossings and proposed alternative routes that reduced waiting times by an average of 45 minutes per shipment</p>
+                    </div>
+                    <div class="accomplishment-card">
+                        <h4>Multilingual Documentation Templates</h4>
+                        <p>Created standardized bilingual (Italian-German) templates for common shipping documents that were adopted company-wide</p>
+                    </div>
+                    <div class="accomplishment-card">
+                        <h4>Summer Peak Preparation</h4>
+                        <p>Assisted in planning for the annual summer tourism peak season, helping the team handle a 30% increase in shipment volume without additional delays</p>
+                    </div>
+                </div>
+                
+                <div class="experience-card">
+                    <h3>Skills Developed</h3>
+                    <div class="skills-grid">
+                        <div class="skill-tag">Route Planning</div>
+                        <div class="skill-tag">Logistics Software</div>
+                        <div class="skill-tag">Multilingual Communication</div>
+                        <div class="skill-tag">Supply Chain Coordination</div>
+                        <div class="skill-tag">Document Compliance</div>
+                        <div class="skill-tag">Problem Solving</div>
+                        <div class="skill-tag">Time Management</div>
+                        <div class="skill-tag">Team Collaboration</div>
+                    </div>
+                </div>
+                
+                <div class="experience-card">
+                    <h3>Reflection</h3>
+                    <p>My time at Gruber Logistics provided my first professional exposure to the logistics industry and confirmed my interest in pursuing this field. The fast-paced environment taught me to work efficiently under pressure while maintaining attention to detail. This experience particularly strengthened my ability to communicate technical logistics concepts to diverse stakeholders.</p>
+                </div>
+                
+                <a href="../index.html#experience" class="back-link">
+                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+                    </svg>
+                    Back to Work Experience
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Contact: leo-matthias.sturm@connect.polyu.hk</p>
+            <p>Phone: +852 9845 2221</p>
+            <br>
+            <p>&copy; 2025 Leo Sturm. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

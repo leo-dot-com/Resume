@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leo Sturm | High School Education</title>
+    <style>
+        :root {
+            --primary: #1a73e8;
+            --dark: #202124;
+            --light: #f8f9fa;
+            --gray: #5f6368;
+            --light-blue: #e8f0fe;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            color: var(--dark);
+            margin: 0;
+            line-height: 1.6;
+            background-color: #fafafa;
+        }
+
+        #title-image {
+            padding: 0; /* Remove all padding */
+            background-image: url(https://berlaymont.be/images/vue-aerienne/campus-de-berlaymont-vue-aerienne-003.jpg);
+            background-repeat: no-repeat;
+            background-size: cover; /* Add this to make sure image covers the area */
+            background-position: center;
+            height: 50vh; /* Set a specific height */
+            display: flex;
+            align-items: center; /* Vertically center the title */
+            justify-content: center; /* Horizontally center the title */
+            margin-top: -6%;
+        }
+        
+        .container {
+            width: 85%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0;
+        }
+        
+        header {
+            background: var(--dark);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            margin-bottom: 0;
+        }
+        
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.5m 0;
+        }
+        
+        .logo {
+            font-weight: 700;
+            font-size: 1.5rem;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 2rem;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+        
+        .nav-links a:hover {
+            opacity: 0.8;
+        }
+        
+        section {
+            padding: 4rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 0;
+            color: var(--primary);
+            position: relative;
+            margin-top: -10%;
+            background: rgba(255, 255, 255, 0.85); /* Semi-transparent white */
+            padding: 20px 40px; /* Add padding */
+            padding-bottom: 30px;
+            border-radius: 12px; /* Rounded corners */
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* Subtle shadow */
+            display: inline-block; /* Make background fit content */
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 15px; /* Adjust position to account for padding */
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 3px;
+            background: var(--primary);
+            border-radius: 3px; /* Rounded corners for the line */
+        }
+        
+        .school-header {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+            margin-top: -10%;
+            margin-bottom: 3rem;
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .school-info {
+            flex: 1;
+        }
+        
+        .school-logo {
+            width: 180px;
+            height: 180px;
+            border-radius: 10px;
+            object-fit: contain;
+            background: var(--light-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            border: 1px solid #ddd;
+        }
+
+        .school-logo img {
+            width: 170px;
+            height: 170px;
+        }
+        
+        .info-card {
+            background: white;
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .info-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .info-card h3 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--light-blue);
+        }
+        
+        .course-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .course-item {
+            background: var(--light-blue);
+            padding: 1rem;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+        
+        .course-item:hover {
+            background: #d2e3fc;
+            transform: translateX(5px);
+        }
+        
+        .course-item h4 {
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+        
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+        
+        .achievement-card {
+            background: white;
+            border-left: 4px solid var(--primary);
+            padding: 1.5rem;
+            border-radius: 0 8px 8px 0;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .achievement-card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .achievement-card h4 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .achievement-card .date {
+            color: var(--gray);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            margin-top: 2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .back-link:hover {
+            color: #0d47a1;
+            transform: translateX(-5px);
+        }
+        
+        .back-link svg {
+            margin-right: 8px;
+        }
+        
+        footer {
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        
+        @media (max-width: 768px) {
+            .school-header {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .course-list {
+                grid-template-columns: 1fr;
+            }
+            
+            .achievements-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="container">
+                <div class="logo">Leo Sturm</div>
+                <ul class="nav-links">
+                    <li><a href="../index.html#intro">Intro</a></li>
+                    <li><a href="../index.html#education">Education</a></li>
+                    <li><a href="../index.html#experience">Experience</a></li>
+                    <li><a href="../index.html#achievements">Achievements</a></li>
+                    <li><a href="../index.html#skills">Skills</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="highschool">
+            <div id="title-image">
+                <h2 class="section-title">High School Education</h2>
+            </div>
+            <div class="container">
+                <div class="school-header">
+                    <div class="school-logo">
+                        <img src="https://berlaymont.be/images/logo-lycee-de-berlaymont.png" alt="Berlaymont Logo">
+                    </div>
+                    <div class="school-info">
+                        <h1>Lycée de Berlaymont</h1>
+                        <p>Waterloo, Belgium | 2016 - 2022</p>
+                        <p>High School Diploma | GPA: 3.5</p>
+                        <p>Graduated: June 2022</p>
+                        <p>An international school providing a multicultural education with a focus on languages, sciences, and humanities.</p>
+                    </div>
+                </div>
+                
+                <div class="info-card">
+                    <h3>Academic Overview</h3>
+                    <p>My high school education at Lycée de Berlaymont provided a strong foundation in both scientific and humanities disciplines, with a particular emphasis on multilingual education and international perspectives. The curriculum prepared me for the challenges of university studies and developed my critical thinking abilities.</p>
+                </div>
+                
+                <div class="info-card">
+                    <h3>Relevant Coursework</h3>
+                    <div class="course-list">
+                        <div class="course-item">
+                            <h4>Economics</h4>
+                            <p>Studied micro and macroeconomics principles, market structures, and international trade theories.</p>
+                        </div>
+                        <div class="course-item">
+                            <h4>Advanced Mathematics</h4>
+                            <p>Covered calculus, algebra, statistics, and mathematical modeling with real-world applications.</p>
+                        </div>
+                        <div class="course-item">
+                            <h4>Chinese (Mandarin)</h4>
+                            <p>Developed intermediate proficiency in Mandarin through four years of intensive language study.</p>
+                        </div>
+                        <div class="course-item">
+                            <h4>Physics</h4>
+                            <p>Explored classical mechanics, thermodynamics, and electromagnetism with laboratory components.</p>
+                        </div>
+                        <div class="course-item">
+                            <h4>Computer Science</h4>
+                            <p>Introduction to programming concepts, algorithms, and web development fundamentals.</p>
+                        </div>
+                        <div class="course-item">
+                            <h4>International Relations</h4>
+                            <p>Studied global political systems, international organizations, and diplomatic relations.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="info-card">
+                    <h3>Achievements & Honors</h3>
+                    <div class="achievements-grid">
+                        <div class="achievement-card">
+                            <h4>Mathematics Excellence Award</h4>
+                            <div class="date">2021</div>
+                            <p>Awarded for outstanding performance in advanced mathematics and problem-solving skills.</p>
+                        </div>
+                        <div class="achievement-card">
+                            <h4>Multilingual Proficiency Certificate</h4>
+                            <div class="date">2022</div>
+                            <p>Recognized for fluency in English, German, and French with intermediate Mandarin skills.</p>
+                        </div>
+                        <div class="achievement-card">
+                            <h4>Science Fair Winner</h4>
+                            <div class="date">2020</div>
+                            <p>First place in the regional science fair for a project on renewable energy optimization.</p>
+                        </div>
+                        <div class="achievement-card">
+                            <h4>Debate Team Captain</h4>
+                            <div class="date">2021-2022</div>
+                            <p>Led the debate team to regional championships, focusing on economic and environmental topics.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="info-card">
+                    <h3>Extracurricular Activities</h3>
+                    <ul style="padding-left: 1.5rem; line-height: 2;">
+                        <li><strong>Student Council:</strong> Served as Treasurer for two years, managing student activity funds</li>
+                        <li><strong>Robotics Club:</strong> Designed and programmed competition robots for national events</li>
+                        <li><strong>Language Exchange Program:</strong> Organized peer tutoring between native and learning students</li>
+                        <li><strong>Football Team:</strong> Played as midfielder in the school's competitive team</li>
+                        <li><strong>Model United Nations:</strong> Represented various countries in regional MUN conferences</li>
+                    </ul>
+                </div>
+                
+                <div class="info-card">
+                    <h3>Key Projects</h3>
+                    <div style="margin-top: 1.5rem;">
+                        <h4>International Trade Simulation (2021)</h4>
+                        <p>Led a team project simulating international trade negotiations, applying economic principles to resolve trade disputes between fictional countries.</p>
+                        
+                        <h4 style="margin-top: 1.5rem;">Sustainability Research (2020)</h4>
+                        <p>Researched and presented on sustainable logistics solutions for urban environments, including cost-benefit analysis of electric delivery vehicles.</p>
+                        
+                        <h4 style="margin-top: 1.5rem;">Language Learning App Prototype (2022)</h4>
+                        <p>Developed a prototype for a multilingual learning application as part of the computer science capstone project.</p>
+                    </div>
+                </div>
+                
+                <a href="../index.html#education" class="back-link">
+                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+                    </svg>
+                    Back to Education Overview
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Contact: leo-matthias.sturm@connect.polyu.hk</p>
+            <p>Phone: +852 9845 2221</p>
+            <br>
+            <p>&copy; 2025 Leo Sturm. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Back to top button functionality
+        const backToTopBtn = document.querySelector('.back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopBtn.style.display = 'block';
+            } else {
+                backToTopBtn.style.display = 'none';
+            }
+        });
+        
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+</html>
