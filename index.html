@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leo Sturm | Personal Portfolio</title>
+    <style>
+        :root {
+            --primary: #1a73e8;
+            --dark: #202124;
+            --light: #f8f9fa;
+            --gray: #5f6368;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            color: var(--dark);
+            line-height: 1.6;
+            background: #fff;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            width: 85%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 0;
+        }
+        
+        header {
+            background: var(--dark);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.5rem 0;
+        }
+        
+        .logo {
+            font-weight: 700;
+            font-size: 1.5rem;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 2rem;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+        
+        .nav-links a:hover {
+            opacity: 0.8;
+        }
+        
+        section {
+            padding: 4rem 0;
+            position: relative;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--primary);
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 3px;
+            background: var(--primary);
+        }
+        
+        .intro-content {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+        }
+        
+        .intro-text {
+            flex: 1;
+        }
+        
+        .profile-img {
+            width: 250px;
+            height: 300px;
+            border-radius: 5%;
+            object-fit: cover;
+            border: 3px solid var(--primary);
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--primary);
+            left: 50%;
+            margin-left: -1px;
+        }
+        
+        .timeline-item {
+            padding: 1rem 2rem;
+            position: relative;
+            width: 50%;
+        }
+        
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+        
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+        
+        .timeline-content {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            position: relative;
+            z-index: 2;
+        }
+
+        .timeline-content a, .skill-category a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .timeline-content:hover, .skill-category:hover {
+            transform: translateY(-5%);
+            transition: ease 0.5s;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .skill-category {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        footer {
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+        
+        /* Truck Animation Container */
+        .truck-animation-container {
+            position: absolute;
+            top: 0;
+            right: -100%;
+            width: 100%;
+            height: 80%;
+            z-index: 1;
+            overflow: hidden;
+        }
+        
+        .loop-wrapper {
+            margin: 0 auto;
+            position: relative;
+            display: block;
+            width: auto;
+            height: 250px;
+            overflow: hidden;
+            border-bottom: 3px solid var(--primary);
+            color: var(--primary);
+        }
+        
+        .mountain {
+            position: absolute;
+            right: -900px;
+            bottom: -20px;
+            width: 2px;
+            height: 2px;
+            box-shadow: 
+                0 0 0 50px var(--primary),
+                60px 50px 0 70px var(--primary),
+                90px 90px 0 50px var(--primary),
+                250px 250px 0 50px var(--primary),
+                290px 320px 0 50px var(--primary),
+                320px 400px 0 50px var(--primary);
+            transform: rotate(130deg);
+            animation: mtn 20s linear infinite;
+        }
+        
+        .hill {
+            position: absolute;
+            right: -900px;
+            bottom: -50px;
+            width: 400px;
+            border-radius: 50%;
+            height: 20px;
+            box-shadow: 
+                0 0 0 50px var(--primary),
+                -20px 0 0 20px var(--primary),
+                -90px 0 0 50px var(--primary),
+                250px 0 0 50px var(--primary),
+                290px 0 0 50px var(--primary),
+                620px 0 0 50px var(--primary);
+            animation: hill 4s 2s linear infinite;
+        }
+        
+        .tree, .tree:nth-child(2), .tree:nth-child(3) {
+            position: absolute;
+            height: 100px; 
+            width: 35px;
+            bottom: 0;
+            background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/130015/tree.svg) no-repeat;
+        }
+        
+        .rock {
+            margin-top: -17%;
+            height: 2%; 
+            width: 2%;
+            bottom: -2px;
+            border-radius: 20px;
+            position: absolute;
+            background: var(--primary);
+        }
+        
+        .truck, .wheels {
+            transition: all ease;
+            width: 85px;
+            margin-right: -60px;
+            bottom: 0px;
+            right: 50%;
+            position: absolute;
+            background: var(--primary);
+        }
+        
+        .truck {
+            background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/130015/truck.svg) no-repeat;
+            background-size: contain;
+            height: 60px;
+        }
+        
+        .truck:before {
+            content: " ";
+            position: absolute;
+            width: 25px;
+            box-shadow:
+                -30px 28px 0 1.5px var(--primary),
+                -35px 18px 0 1.5px var(--primary);
+        }
+        
+        .wheels {
+            background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/130015/wheels.svg) no-repeat;
+            height: 15px;
+            margin-bottom: 0;
+        }
+        
+        .tree  { animation: tree 3s 0.000s linear infinite; }
+        .tree:nth-child(2)  { animation: tree2 2s 0.150s linear infinite; }
+        .tree:nth-child(3)  { animation: tree3 8s 0.050s linear infinite; }
+        .rock  { animation: rock 4s   -0.530s linear infinite; }
+        .truck  { animation: truck 4s   0.080s ease infinite; }
+        .wheels  { animation: truck 4s   0.001s ease infinite; }
+        .truck:before { animation: wind 1.5s   0.000s ease infinite; }
+        
+        @keyframes tree {
+            0%   { transform: translate(1350px); }
+            50% {}
+            100% { transform: translate(-50px); }
+        }
+        @keyframes tree2 {
+            0%   { transform: translate(650px); }
+            50% {}
+            100% { transform: translate(-50px); }
+        }
+        @keyframes tree3 {
+            0%   { transform: translate(2750px); }
+            50% {}
+            100% { transform: translate(-50px); }
+        }
+        
+        @keyframes rock {
+            0%   { right: -200px; }
+            100% { right: 2000px; }
+        }
+        @keyframes truck {
+            0%   { }
+            6%   { transform: translateY(0px); }
+            7%   { transform: translateY(-6px); }
+            9%   { transform: translateY(0px); }
+            10%   { transform: translateY(-1px); }
+            11%   { transform: translateY(0px); }
+            100%   { }
+        }
+        @keyframes wind {
+            0%   {  }
+            50%   { transform: translateY(3px) }
+            100%   { }
+        }
+        @keyframes mtn {
+            100% {
+                transform: translateX(-2000px) rotate(130deg);
+            }
+        }
+        @keyframes hill {
+            100% {
+                transform: translateX(-2000px);
+            }
+        }
+        
+        /* Decorative elements */
+        .decorative-circle {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.05;
+            z-index: -1;
+        }
+        
+        .circle-1 {
+            width: 300px;
+            height: 300px;
+            background: var(--primary);
+            top: 10%;
+            right: 5%;
+        }
+        
+        .circle-2 {
+            width: 150px;
+            height: 150px;
+            background: var(--primary);
+            bottom: 15%;
+            left: 10%;
+        }
+
+        .circle-3 {
+            width: 300px;
+            height: 300px;
+            background: gray;
+            top: 40%;
+            right: 18%;
+            z-index: 0;
+        }
+
+        .circle-4 {
+            width: 300px;
+            height: 300px;
+            background: var(--primary);
+            top: 38%;
+            left: 14%;
+            z-index: 0;
+        }
+        
+        /* Timeline decorations */
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: var(--primary);
+            top: 20px;
+            z-index: 1;
+        }
+        
+        .timeline-item:nth-child(odd)::before {
+            right: -8px;
+        }
+        
+        .timeline-item:nth-child(even)::before {
+            left: -8px;
+        }
+        
+        /* PDF View Button Styles */
+        .resume-download-container {
+            margin-top: 2rem;
+        }
+        
+        .view-btn {
+            display: inline-flex;
+            align-items: center;
+            background-color: var(--primary);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+            border: 2px solid transparent;
+        }
+        
+        .view-btn:hover {
+            background-color: #0b59c0;
+            transform: translateY(-2px);
+            box-shadow: 0 3px 10px rgba(0,0,0,0.4);
+        }
+        
+        .view-btn:active {
+            transform: translateY(1px);
+            box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+        }
+        
+        .view-icon {
+            margin-right: 10px;
+            width: 20px;
+            height: 20px;
+            fill: white;
+        }
+        
+        /* Toast Notification */
+        .toast {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #4CAF50;
+            color: white;
+            padding: 16px 24px;
+            border-radius: 4px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            z-index: 1000;
+            transform: translateY(100px);
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+        
+        .toast.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        
+        @media (max-width: 768px) {
+            .intro-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .timeline::before {
+                left: 30px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            
+            .timeline-item:nth-child(even) {
+                left: 0;
+            }
+            
+            .truck-animation-container {
+                display: none; /* Hide animation on mobile */
+            }
+            
+            .view-btn {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Decorative circles -->
+    <div class="decorative-circle circle-1"></div>
+    <div class="decorative-circle circle-2"></div>
+    
+    <!-- Toast Notification -->
+    <div id="viewToast" class="toast">Opening resume in new window...</div>
+
+    <header>
+        <nav>
+            <div class="container">
+                <div class="logo">Leo Sturm</div>
+                <ul class="nav-links">
+                    <li><a href="#intro">Intro</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#achievements">Achievements</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Introduction Section -->
+        <section id="intro">
+            <div class="container">
+                <div class="intro-content">
+                    <div class="intro-text">
+                        <h1>Hello, I'm <span style="color: var(--primary);">Leo Sturm</span></h1>
+                        <p>Year 4 Student studying Logistics Engineering and AI at The Hong Kong Polytechnic University</p>
+                        <p>Passionate about optimizing supply chains through AI-driven solutions. With a multicultural background and fluency in 5 languages, I bring diverse perspectives to complex logistics challenges.</p>
+                        
+                        <!-- Resume View Section -->
+                        <div class="resume-download-container">
+                            <a href="#" id="viewResume" class="view-btn">
+                                <svg class="view-icon" viewBox="0 0 24 24">
+                                    <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
+                                </svg>
+                                View PDF Resume
+                            </a>
+                        </div>
+                    </div>
+                    <img src="Picture.jpeg" alt="Profile Photo" class="profile-img">
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education" style="background-color: #f5f7fa;">
+            <div class="decorative-circle circle-3"></div>
+            <div class="container">
+                <h2 class="section-title">Education</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <a href="education/highschool.html">
+                                <h3>Lycée de Berlaymont, Belgium</h3>
+                                <p>High School Diploma | 2016 - 2022</p>
+                                <p>GPA: 3.5 | Graduated: June 2022</p>
+                                <h4>Relevant Coursework:</h4>
+                                <ul>
+                                    <li>Economics</li>
+                                    <li>Mathematics</li>
+                                    <li>Chinese (Mandarin)</li>
+                                </ul>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <a href="education/university.html">
+                                <h3>The Hong Kong Polytechnic University, Hong Kong</h3>
+                                <p>Bachelor of Logistics Engineering with AI and Minor in Finance | 2022 - Present</p>
+                                <p>GPA: 3.2 | Expected Graduation: May 2026</p>
+                                <h4>Relevant Coursework:</h4>
+                                <ul>
+                                    <li>Logistics</li>
+                                    <li>AI and Data Analytics</li>
+                                    <li>Finance</li>
+                                </ul>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Work Experience Section -->
+        <section id="experience" style="background-color: lightgray;">
+            <div class="decorative-circle circle-4"></div>
+            <div class="container">
+                <h2 class="section-title">Work Experience</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <a href="work/gruber.html">
+                                <h3>Logistics Assistant</h3>
+                                <p>Gruber Logistics | June 2023 - July 2023</p><br>
+                                <ul>
+                                    <li>Optimized route planning for European shipments, reducing transit time by 12%</li>
+                                    <li>Implemented inventory tracking system that reduced errors by 18%</li>
+                                    <li>Coordinated international freight documentation for 50+ weekly shipments</li>
+                                </ul>
+                            </a>
+                        </div>
+                        <!-- Truck animation container -->
+                        <div class="truck-animation-container">
+                            <div class="loop-wrapper">
+                                <div class="mountain"></div>
+                                <div class="hill"></div>
+                                <div class="tree"></div>
+                                <div class="tree"></div>
+                                <div class="tree"></div>
+                                <div class="rock"></div>
+                                <div class="truck"></div>
+                                <div class="wheels"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <a href="work/isa.html">
+                                <h3>Financial Secretary</h3>
+                                <p>International Student Association | September 2023 - August 2024</p><br>
+                                <ul>
+                                    <li>Managed annual budget of HK$500,000 for international student events</li>
+                                    <li>Implemented cost-saving measures that reduced event expenses by 15%</li>
+                                    <li>Coordinated financial planning for 12+ cultural events per semester</li>
+                                </ul>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <a href="work/research-intern.html">
+                                <h3>Research Intern</h3>
+                                <p>PolyU | June 2024 - August 2024</p><br>
+                                <ul>
+                                    <li>Developed machine learning model to predict port congestion with 89% accuracy</li>
+                                    <li>Analyzed shipping data from 3 major ports to identify optimization opportunities</li>
+                                    <li>Co-authored research paper on AI applications in maritime logistics</li>
+                                </ul>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <a href="work/research-pt.html">
+                                <h3>Research Part-time</h3>
+                                <p>PolyU | September 2024 - May 2025</p><br>
+                                <ul>
+                                    <li>Developing predictive models for supply chain disruption risks</li>
+                                    <li>Creating optimization algorithms for warehouse automation systems</li>
+                                    <li>Implementing AI solutions for real-time logistics tracking</li>
+                                </ul>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <a href="work/watson.html">
+                                <h3>Digital Innovation Intern</h3>
+                                <p>AS Watson Group | June 2025 - August 2025</p><br>
+                                <ul>
+                                    <li>Developing AI-powered inventory management system</li>
+                                    <li>Implementing IoT solutions for warehouse efficiency</li>
+                                    <li>Creating predictive analytics for retail supply chain optimization</li>
+                                </ul>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Achievements Section -->
+        <section id="achievements" style="background-color: #f5f7fa;">
+            <div class="container">
+                <h2 class="section-title">Achievements</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <a href="achievement/competition.html">
+                            <h3>Competitions</h3><br>
+                            <ul>
+                                <li>The 8th Global Competition on Design for Future Education (Beijing) - Silver Medal (2025)</li><br>
+                                <li>Multi-level Competition-Based Learning with International Learning Exposure - 1st Runner Up (2025)</li><br>
+                                <li>The 11th Hong Kong University Student Innovation and Entrepreneurship Competition (Hong Kong) - Merit Prize (2025)</li><br>
+                            </ul>
+                        </a>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <a href="achievement/conference.html">
+                            <h3>Conferences</h3><br>
+                            <ul>
+                                <li>The 9th International Conference on Education and Multimedia Technology (Osaka) - Presenter (2025)</li>
+                            </ul>
+                        </a>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <a href="achievement/certificate.html">
+                            <h3>Certificates</h3><br>
+                            <ul>
+                                <li>Business Analytics with Excel: Elementary to Advanced - Johns Hopkins University (2025)</li><br>
+                                <li>Chinese for HSK 4 - Peking University (2025)</li><br>
+                                <li>Python and Statistics for Financial Analysis - The Hong Kong University of Science and Technology (2024)</li><br>
+                                <li>Entry Scholarship for Non-Local Students - PolyU ISE (2022)</li><br>
+                            </ul>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills">
+            <div class="container">
+                <h2 class="section-title">Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <a href="skills/language.html">
+                            <h3>Language Skills</h3>
+                            <ul>
+                                <li>🇬🇧 English: Native</li>
+                                <li>🇩🇪 German: Native</li>
+                                <li>🇫🇷 French: Native</li>
+                                <li>🇨🇳 Mandarin: Intermediate</li>
+                                <li>🇳🇱 Dutch: Intermediate</li>
+                                <li>🇭🇰 Cantonese: Beginner</li>
+                            </ul>
+                        </a>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <a href="skills/skill.html">
+                            <h3>Technical Skills</h3>
+                            <ul>
+                                <li>Microsoft Office</li>
+                                <li>Programming (frontend & backend)</li>
+                                <li>AI (specifically deep-learning architectures)</li>
+                                <li>IoT and AIot</li>
+                            </ul>
+                        </a>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <a href="skills/hobbies.html"></a>
+                            <h3>Hobbies & Interests</h3>
+                            <ul>
+                                <li>⚽️ Football</li>
+                                <li>🏎️ Formula 1</li>
+                                <li>✈️ Travelling (especially Japan)</li>
+                            </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Contact: leo-matthias.sturm@connect.polyu.hk</p>
+            <p>Phone: +852 9845 2221</p>
+            <br>
+            <p>&copy; 2025 Leo Sturm. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Sticky header effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            header.classList.toggle('sticky', window.scrollY > 0);
+        });
+        
+        // Add subtle hover effect to profile image
+        const profileImg = document.querySelector('.profile-img');
+        if(profileImg) {
+            profileImg.addEventListener('mouseenter', () => {
+                profileImg.style.transform = 'scale(1.03)';
+                profileImg.style.transition = 'transform 0.3s ease';
+            });
+            
+            profileImg.addEventListener('mouseleave', () => {
+                profileImg.style.transform = 'scale(1)';
+            });
+        }
+        
+        // PDF View Functionality
+        document.getElementById('viewResume').addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Replace with the actual path to your PDF file
+            const pdfPath = 'Leo_Sturm_Resume.pdf';
+            
+            // Open PDF in a new window/tab
+            const newWindow = window.open(pdfPath, '_blank');
+            
+            // Check if popup was blocked
+            if (!newWindow || newWindow.closed || typeof newWindow.closed == 'undefined') {
+                // Popup blocked - show alert
+                alert('Popup blocked! Please allow popups for this site to view the PDF.');
+            } else {
+                // Show toast notification
+                showToast();
+            }
+        });
+        
+        // Function to show toast notification
+        function showToast() {
+            const toast = document.getElementById('viewToast');
+            toast.classList.add('show');
+            
+            // Hide toast after 3 seconds
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
